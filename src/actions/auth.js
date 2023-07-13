@@ -31,7 +31,7 @@ export const loadUser = () => async (dispatch) => {
     
 	} 
   try {
-    const res = await axios.get('https://devconnector-backend-green.vercel.app/api/auth');
+    const res = await axios.get(`${url}/api/auth`);
    
 
     dispatch({
@@ -54,7 +54,7 @@ export const register = (formData) => async (dispatch) => {
 		}
 	}
   try {
-    const res = await axios.post('api/users', formData, config);
+    const res = await axios.post(`${url}/api/users`, formData, config);
 
     dispatch({
       type: REGISTER_SUCCESS,
@@ -84,7 +84,7 @@ export const login = (email, password) => async (dispatch) => {
 	}
 
   try {
-    const res = await axios.post('https://devconnector-backend-green.vercel.app/api/auth', body,config);
+    const res = await axios.post(`${url}/api/auth`, body,config);
     localStorage.setItem("token",res.data.token);
 
     dispatch({
