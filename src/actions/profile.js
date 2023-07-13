@@ -31,7 +31,7 @@ export const getCurrentProfile = () => async (dispatch) => {
     }
    
   try {
-    const res = await axios.get(`${url}api/profile/me`);
+    const res = await axios.get(`${url}/api/profile/me`);
 
     dispatch({
       type: GET_PROFILE,
